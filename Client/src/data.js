@@ -18,7 +18,7 @@ export const profiles = [
     name: "Michael Johnson",
     description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
     photo: "image3.jpg",
-    location: "Toronto, Canada",
+    location: "New York, USA",
   },
-  // Add more profiles as needed
+
 ];

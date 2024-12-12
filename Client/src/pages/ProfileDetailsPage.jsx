@@ -8,7 +8,6 @@ const ProfileDetailsPage = () => {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    // Fetch the profile data using the ID from the URL (either from API or static data)
     const profilesData = [
       {
         id: "1",

@@ -55,7 +55,7 @@ const AdminPanel = ({ profiles, onAddProfile, onEditProfile, onDeleteProfile }) 
     setDescription("");
     setPhoto("");
     setLocation("");
-    setError(""); // Reset error message
+    setError(""); 
     setEditingProfileId(null);
   };
 

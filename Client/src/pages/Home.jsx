@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";  // Import Link component
+import { Link } from "react-router-dom";  
 import ProfileCard from "../components/ProfileCard/ProfileCard";
 import "./Home.css";
 

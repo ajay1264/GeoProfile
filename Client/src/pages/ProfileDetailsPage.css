@@ -1,4 +1,3 @@
-/* Main container for profile details */
 .profile-details-container {
     display: flex;
     flex-direction: column;
@@ -14,10 +13,10 @@
   }
   
   .profile-details-container:hover {
-    transform: translateY(-10px); /* Hover effect to lift container */
+    transform: translateY(-10px); 
   }
   
-  /* Profile details section */
+  
   .profile-details {
     text-align: center;
     background-color: #fff;
@@ -32,7 +31,7 @@
     100% { opacity: 1; }
   }
   
-  /* Profile name */
+
   .profile-details h2 {
     font-size: 30px;
     font-weight: bold;
@@ -41,7 +40,7 @@
     font-family: 'Poppins', sans-serif;
   }
   
-  /* Profile image styling */
+
   .profile-img {
     width: 200px;
     height: 200px;
@@ -53,11 +52,11 @@
   }
   
   .profile-img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05); 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
   
-  /* Profile description */
+
   .profile-description {
     font-size: 18px;
     color: #555;
@@ -67,7 +66,7 @@
     font-weight: 500;
   }
   
-  /* Profile location */
+
   .profile-location {
     font-size: 16px;
     color: #444;
@@ -75,7 +74,7 @@
     font-style: italic;
   }
   
-  /* Back button styling */
+ 
   .back-btn {
     display: inline-block;
     padding: 12px 25px;

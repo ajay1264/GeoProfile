@@ -4,14 +4,12 @@ import "leaflet/dist/leaflet.css";
 import "./MapComment.css";
 
 const MapComment = ({ latitude, longitude }) => {
-  const mapRef = useRef(null); // Reference for the map container
-  const mapInstance = useRef(null); // Reference to store the map instance
-  const markerRef = useRef(null); // Reference to store the marker instance
+  const mapRef = useRef(null); 
+  const mapInstance = useRef(null); 
+  const markerRef = useRef(null); 
 
   useEffect(() => {
-    // Check if map is already initialized
     if (!mapInstance.current) {
-      // Initialize the map
       mapInstance.current = L.map(mapRef.current).setView([latitude, longitude], 10);
 
       // Add OpenStreetMap tiles to the map
@@ -21,7 +19,6 @@ const MapComment = ({ latitude, longitude }) => {
       }).addTo(mapInstance.current);
     }
 
-    // If a marker exists, update its position, otherwise, create a new marker
     if (markerRef.current) {
       markerRef.current.setLatLng([latitude, longitude]);
     } else {
@@ -31,7 +28,7 @@ const MapComment = ({ latitude, longitude }) => {
         .openPopup();
     }
 
-  }, [latitude, longitude]); // Re-run when latitude or longitude changes
+  }, [latitude, longitude]); 
 
   return (
     <div className="map-comment">
