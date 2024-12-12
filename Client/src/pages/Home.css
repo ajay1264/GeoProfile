@@ -1,0 +1,129 @@
+/* Home Container */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f4f7f6;
+  min-height: 100vh;
+}
+
+.home h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* Profiles Container */
+.profiles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Profile Card */
+.profile-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Image */
+.profile-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.profile-card img:hover {
+  transform: scale(1.1);
+}
+
+/* Profile Card Content */
+.profile-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-card p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+}
+
+/* Link Button (View Profile) */
+.profile-card a {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff6f61;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.profile-card a:hover {
+  background-color: #e25f4f;
+  transform: translateY(-5px);
+}
+
+.profile-card a:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profiles-container {
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .profile-card {
+    padding: 15px;
+  }
+
+  .profile-card img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-card h3 {
+    font-size: 20px;
+  }
+
+  .profile-card a {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

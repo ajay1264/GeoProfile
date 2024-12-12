@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import ProfileCard from '../components/ProfileCard/ProfileCard.jsx';
+import React from "react";
+import { Link } from "react-router-dom";  // Import Link component
+import ProfileCard from "../components/ProfileCard/ProfileCard";
+import "./Home.css";
 
-const Home = () => {
-  const [profiles, setProfiles] = useState([]);
-
-  useEffect(() => {
-    // Fetch profiles from API or use sample data
-    const fetchProfiles = async () => {
-      const response = await fetch('/api/profiles'); // Adjust with your API endpoint
-      const data = await response.json();
-      setProfiles(data);
-    };
-
-    fetchProfiles();
-  }, []);
-
+const Home = ({ profiles }) => {
   return (
-    <div>
-      <h1>Profiles</h1>
-      <div className="profile-list">
-        {profiles.map(profile => (
-          <ProfileCard key={profile.id} profile={profile} />
+    <div className="home">
+      <h1>Profile Explorer</h1>
+      <div className="profiles-container">
+        {profiles.map((profile) => (
+          <ProfileCard key={profile.id} profile={profile}>
+            <Link to={`/profile/${profile.id}`}>View Profile</Link> {/* Link to Profile Details */}
+          </ProfileCard>
         ))}
       </div>
     </div>

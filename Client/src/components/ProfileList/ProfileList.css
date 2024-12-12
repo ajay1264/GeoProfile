@@ -1,0 +1,110 @@
+/* Profile List */
+.profile-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Slightly larger cards */
+  gap: 25px;
+  padding: 30px;
+  background-color: #f1f1f1;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Card */
+.profile-card {
+  background: linear-gradient(135deg, #ffffff, #f3f4f6); /* Subtle gradient */
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px); /* Hover effect to lift the card */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+/* Profile Image */
+.profile-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.profile-card img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Profile Name */
+.profile-card h3 {
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+  margin: 10px 0;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Profile Description */
+.profile-card p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Summary Button */
+.summary-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff6f61; /* Soft red-orange for contrast */
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.summary-button:hover {
+  background-color: #e25f4f; /* Darker red-orange on hover */
+  transform: translateY(-5px); /* Button lift effect */
+}
+
+.summary-button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 111, 97, 0.5); /* Focused glow effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-list {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .profile-card {
+    padding: 15px;
+  }
+
+  .profile-card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-card h3 {
+    font-size: 18px;
+  }
+
+  .summary-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

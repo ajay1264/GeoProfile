@@ -1,33 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
+import React, { useEffect, useRef } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import "./MapComment.css";
 
-const MapComponent = ({ address }) => {
-  const [coordinates, setCoordinates] = useState(null);
+const MapComment = ({ latitude, longitude }) => {
+  const mapRef = useRef(null); // Reference for the map container
+  const mapInstance = useRef(null); // Reference to store the map instance
+  const markerRef = useRef(null); // Reference to store the marker instance
 
   useEffect(() => {
-    if (address) {
-      // Use a geocoding service like OpenCage or Nominatim to convert address to coordinates
-      fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${address}`)
-        .then(response => response.json())
-        .then(data => {
-          if (data[0]) {
-            setCoordinates([data[0].lat, data[0].lon]);
-          }
-        });
+    // Check if map is already initialized
+    if (!mapInstance.current) {
+      // Initialize the map
+      mapInstance.current = L.map(mapRef.current).setView([latitude, longitude], 10);
+
+      // Add OpenStreetMap tiles to the map
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(mapInstance.current);
     }
-  }, [address]);
+
+    // If a marker exists, update its position, otherwise, create a new marker
+    if (markerRef.current) {
+      markerRef.current.setLatLng([latitude, longitude]);
+    } else {
+      markerRef.current = L.marker([latitude, longitude])
+        .addTo(mapInstance.current)
+        .bindPopup("Profile Location")
+        .openPopup();
+    }
+
+  }, [latitude, longitude]); // Re-run when latitude or longitude changes
 
   return (
-    <MapContainer center={coordinates || [51.505, -0.09]} zoom={13} style={{ height: "400px", width: "100%" }}>
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      {coordinates && (
-        <Marker position={coordinates}>
-          <Popup>{address}</Popup>
-        </Marker>
-      )}
-    </MapContainer>
+    <div className="map-comment">
+      <div ref={mapRef} style={{ height: "400px", width: "100%" }}></div>
+      <div className="comment-section">
+        <h4>Add a Comment</h4>
+        <textarea placeholder="Add your comment here" rows="4"></textarea>
+        <button className="submit-comment-btn">Submit</button>
+      </div>
+    </div>
   );
 };
 
-export default MapComponent;
+export default MapComment;

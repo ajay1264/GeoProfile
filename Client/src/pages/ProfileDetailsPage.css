@@ -1,0 +1,163 @@
+/* Main container for profile details */
+.profile-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #f4f7fa, #d9e2ec);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-details-container:hover {
+    transform: translateY(-10px); /* Hover effect to lift container */
+  }
+  
+  /* Profile details section */
+  .profile-details {
+    text-align: center;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Profile name */
+  .profile-details h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Profile image styling */
+  .profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Profile description */
+  .profile-description {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin: 15px 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+  }
+  
+  /* Profile location */
+  .profile-location {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 25px;
+    font-style: italic;
+  }
+  
+  /* Back button styling */
+  .back-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    background-color: #ff5a4d;
+    transform: translateY(-5px);
+  }
+  
+  /* Map comment section */
+  .map-comment {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .map-comment textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .map-comment textarea:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
+  }
+  
+  .map-comment .submit-comment-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .map-comment .submit-comment-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .profile-details-container {
+      padding: 20px;
+      gap: 20px;
+    }
+  
+    .profile-details h2 {
+      font-size: 24px;
+    }
+  
+    .profile-img {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .profile-description {
+      font-size: 16px;
+    }
+  
+    .profile-location {
+      font-size: 14px;
+    }
+  
+    .back-btn {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+  
